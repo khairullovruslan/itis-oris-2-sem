@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.client.RestTemplate;
 
 import javax.sql.DataSource;
 
@@ -38,5 +39,10 @@ public class DataBaseConfig {
     @Bean
     public JdbcTemplate jdbcTemplate(){
         return new JdbcTemplate(dataSource());
+    }
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }
